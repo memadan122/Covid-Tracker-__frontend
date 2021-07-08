@@ -1,0 +1,63 @@
+.login__bg {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url('../covid_virus_1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login__form{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.login__container {
+    display: block;
+    font-size: 15px;
+    border-radius: 25px;
+    margin-right: auto;
+    margin-left: 100px;
+    width: 40%;
+    background-color: rgb(230, 230, 230);
+    margin-left: auto;
+    margin-right: auto; 
+    color: blue;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+label {
+    text-align: left;
+}
+
+input[type=text] {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    border: 2px solid rgb(120, 120, 251);
+}
+
+.login__element {
+    display: block;
+    padding-top: 30px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.loginbutton {
+    /* display: flex;
+    border-radius: 3px;
+    margin-top: 30px;
+    text-align: center;
+    margin-right: 40%;
+    margin-left: 40%;
+    height: 50px;
+    width: 20%;
+    background-color: rgb(1, 120, 255);
+    color: white;    */
+    width: 50%;
+    display:flex;
+    margin-right: 50%;
+}
