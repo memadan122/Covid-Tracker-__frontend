@@ -5,13 +5,15 @@ import axios from 'axios'
 import './stylelogin.css'
 
 function Login() {
+    const token= localStorage.getItem("token");
     const [login, setlogin] = useState({
         email: "",
-        password: ""
+        password: "",
+        loginCheck:false
     })
     const handleInput = (e) => {
         const name = e.target.name;
-        const value = e.target.value
+        const value = e.target.value;
         setlogin({ ...login, [name]: value })
     }
     const loginBtn = (e) => {
@@ -20,21 +22,20 @@ function Login() {
             email: login.email,
             password: login.password
         }
-        console.log(userdata)
-        // axios.post('http://localhost:90/account/login', this.state)
-        //     .then((response) => {
-        //         console.log(response)
-        //         window.location.href = "/"
-        //         var token = localStorage.setItem('token', response.data.token)
-        //         alert("Logged In!")
-        //         this.state({
-        //             loginCheck: true
-        //         })
-        //     })
-        //     .catch((err) => {
-        //         alert("Invalid Credential!")
-        //         console.log(err.response)
-        //     })
+        axios.post('http://localhost:90/account/login', userdata)
+            .then((response) => {
+                console.log(response)
+                window.location.href = "/"
+                var token = localStorage.setItem('token', response.data.token)
+                alert("Logged In!")
+                userdata({
+                    loginCheck: true
+                })
+            })
+            .catch((err) => {
+                alert("Invalid Credential!")
+                console.log(err.response)
+            })
     }
 
     return (
@@ -57,21 +58,19 @@ function Login() {
                             <input type="text" value={login.password} onChange={handleInput} name="password" autoComplete="off"></input>
                         </div>
                     </div>
-                    <div className='loginbutton'>
-                        <button onClick={loginBtn}>Login</button>
-                        <button onClick={signupbtn}>Sign-UP</button>
-                    </div>
 
-                    {/* <Container>
-                        <Row>
-                            <Col>
-                                <button onClick={loginBtn}>Login</button>
+
+                    <Container style={{background:"green"}}>
+                        <Row style={{ paddingTop: '20px', display:'flex', justifyContent:'center'}}>
+                            <Col xs={24} md={6} align='middle' style={{background:"red"}} >
+                                <button onClick={loginBtn} style={{ width:'80px' }} >Login</button>
+
                             </Col>
-                            <Col>
-                                <button onClick={signupbtn}>Sign-UP</button>
+                            <Col xs={24} md={6} align='middle'  style={{background:"blue"}}>
+                                <button onClick={signupbtn} style={{ width:'80px' }}>Sign-UP</button>
                             </Col>
                         </Row>
-                    </Container> */}
+                        </Container>
 
                 </form>
 

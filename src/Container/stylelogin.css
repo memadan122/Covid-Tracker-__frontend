@@ -47,17 +47,5 @@ input[type=text] {
 }
 
 .loginbutton {
-    /* display: flex;
-    border-radius: 3px;
-    margin-top: 30px;
-    text-align: center;
-    margin-right: 40%;
-    margin-left: 40%;
-    height: 50px;
-    width: 20%;
-    background-color: rgb(1, 120, 255);
-    color: white;    */
-    width: 50%;
-    display:flex;
-    margin-right: 50%;
+   
 }
