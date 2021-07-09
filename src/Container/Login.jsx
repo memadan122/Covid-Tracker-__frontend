@@ -6,6 +6,7 @@ import './stylelogin.css'
 
 function Login() {
     const token= localStorage.getItem("token");
+
     const [login, setlogin] = useState({
         email: "",
         password: "",
@@ -29,7 +30,7 @@ function Login() {
                 var token = localStorage.setItem('token', response.data.token)
                 alert("Logged In!")
                 userdata({
-                    loginCheck: true
+                    loginCheck: true        
                 })
             })
             .catch((err) => {
@@ -60,14 +61,14 @@ function Login() {
                     </div>
 
 
-                    <Container style={{background:"green"}}>
+                    <Container>
                         <Row style={{ paddingTop: '20px', display:'flex', justifyContent:'center'}}>
-                            <Col xs={24} md={6} align='middle' style={{background:"red"}} >
-                                <button onClick={loginBtn} style={{ width:'80px' }} >Login</button>
+                            <Col xs={24} md={6} align='middle' style={{ paddingLeft:'100px'}} >
+                                <button onClick={loginBtn} style={{ width:'80px', borderRadius:'5px' }} >Login</button>
 
                             </Col>
-                            <Col xs={24} md={6} align='middle'  style={{background:"blue"}}>
-                                <button onClick={signupbtn} style={{ width:'80px' }}>Sign-UP</button>
+                            <Col xs={24} md={6} align='middle'  style={{paddingRight:'100px'}}>
+                                <button onClick={signupbtn} style={{ width:'80px', borderRadius:'5px'}}>Sign-UP</button>
                             </Col>
                         </Row>
                         </Container>

@@ -1,7 +1,7 @@
 .login__bg {
     padding-top: 100px;
     padding-bottom: 100px;
-    background-image: url('../covid_virus_1.jpg');
+    background-image: url('../home\ page\ bg@1.5x.png');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -33,10 +33,10 @@ label {
 
 input[type=text] {
     width: 100%;
-    height: 30px;
+    height: 37px;
     border-radius: 5px;
     border: none;
-    border: 2px solid rgb(120, 120, 251);
+    border: 2px solid #2b96d5;
 }
 
 .login__element {

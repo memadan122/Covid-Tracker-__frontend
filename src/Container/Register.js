@@ -2,12 +2,12 @@ import React, { useEffect, useState, signupbtn } from 'react'
 import './styleregister.css'
 import { Component, state, submitUser, changeHandler } from 'react'
 import { Link } from 'react-router-dom'
-import Button from 'react-bootstrap/Button'
+import {Col} from 'react-bootstrap'
 import axios from 'axios'
 
 function Register() {
     const [signup, setsignup] = useState({
-        fname: "",
+        fullname: "",
         email: "",
         password: "",
         conpassword: ""
@@ -20,31 +20,31 @@ function Register() {
     }
     const signupbtn = (e) => {
         e.preventDefault();
-        const userdata ={
-            fname:signup.fname,
-            email:signup.email,
-            password:signup.password
-            }
-            console.log(userdata)
-        axios.post('http://localhost:90/register/user', userdata)
+        const userdata = {
+            fullname: signup.fullname,
+            email: signup.email,
+            password: signup.password
+        }
+        console.log(userdata)
+        axios.post('http://localhost:90/insert/user', userdata)
             .then((response) => {
                 console.log(response);
                 alert("User has been registered")
             })
             .catch((err) => {
                 console.log(err.response)
-            }) 
+            })
     }
 
     return (
         <div className='register__bg'>
             <div className='register__container'>
-                
+
                 <form>
                     <div className='register__form'>
                         <b><label className='register__label'>Name</label></b>
                         <div>
-                            <input type="text" value={signup.fname} onChange={handleInput} name="fname" autoComplete="off"></input>
+                            <input type="text" value={signup.fullname} onChange={handleInput} name="fullname" autoComplete="off"></input>
                         </div>
 
 
@@ -73,8 +73,10 @@ function Register() {
                         </div>
 
                     </div>
+                
+                        <button onClick={signupbtn} style={{ marginLeft:"40%", borderRadius:'5px' }}>Sign-UP</button>
+                    
 
-                    <button onClick={signupbtn}>Sign-UP</button>
 
 
                 </form>

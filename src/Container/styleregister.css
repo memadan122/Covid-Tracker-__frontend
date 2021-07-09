@@ -1,7 +1,7 @@
 .register__bg {
     padding-top: 100px;
     padding-bottom: 100px;
-    background-image: url('../covid_virus_1.jpg');
+    background-image: url('../home\ page\ bg@1.5x.png');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -9,6 +9,7 @@
     align-items: center;
 }
 .register__form{
+    height: 300px;
     margin-left: 25%;
     margin-right: 25%;
 }
@@ -18,11 +19,11 @@
     border-radius: 25px;
     margin-right: auto;
     margin-left: 100px;
-    width: 40%;
+    width: 29%;
     background-color: rgb(230, 230, 230);
     margin-left: auto;
     margin-right: auto; 
-    color: blue;
+    color: #2b96d5;
     padding-top: 40px;
     padding-bottom: 40px;
 }
@@ -33,10 +34,10 @@ label {
 
 input[type=text] {
     width: 100%;
-    height: 30px;
+    height: 50px;
     border-radius: 5px;
     border: none;
-    border: 2px solid rgb(120, 120, 251);
+    border: 2px solid #2b96d5;
 }
 
 .register__element {
@@ -54,6 +55,6 @@ button {
     margin-left: 40%;
     height: 50px;
     width: 20%;
-    background-color: rgb(1, 120, 255);
+    background-color: #2b96d5;
     color: white;   
 }
