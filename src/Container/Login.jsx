@@ -24,14 +24,15 @@ function Login() {
             password: login.password
         }
         axios.post('http://localhost:90/account/login', userdata)
-            .then((response) => {
-                console.log(response)
-                window.location.href = "/"
+            .then((response) => {                
                 var token = localStorage.setItem('token', response.data.token)
-                alert("Logged In!")
-                userdata({
-                    loginCheck: true        
-                })
+                if(token!=null){alert("Logged In!")}
+                else{
+                    console.log(response)
+                    window.location.href = "/"
+                    alert('invalid credential')
+                }
+                
             })
             .catch((err) => {
                 alert("Invalid Credential!")
