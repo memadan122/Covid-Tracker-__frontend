@@ -29,8 +29,7 @@ function Login() {
                 if(token!=null){alert("Logged In!")}
                 else{
                     console.log(response)
-                    window.location.href = "/"
-                    alert('invalid credential')
+                    alert('Incorrect Password or Username')
                 }
                 
             })
@@ -69,7 +68,7 @@ function Login() {
 
                             </Col>
                             <Col xs={24} md={6} align='middle'  style={{paddingRight:'100px'}}>
-                                <button onClick={signupbtn} style={{ width:'80px', borderRadius:'5px'}}>Sign-UP</button>
+                                <button href='register' style={{ width:'80px', borderRadius:'5px'}}>Sign-UP</button>
                             </Col>
                         </Row>
                         </Container>
