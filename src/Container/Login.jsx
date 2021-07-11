@@ -6,7 +6,6 @@ import './stylelogin.css'
 
 function Login() {
     const token= localStorage.getItem("token");
-
     const [login, setlogin] = useState({
         email: "",
         password: "",
@@ -26,7 +25,10 @@ function Login() {
         axios.post('http://localhost:90/account/login', userdata)
             .then((response) => {                
                 var token = localStorage.setItem('token', response.data.token)
-                if(token!=null){alert("Logged In!")}
+                if(token !== null){
+                    window.location.href = "/"
+                    alert("Logged In!")
+                }
                 else{
                     console.log(response)
                     alert('Incorrect Password or Username')
