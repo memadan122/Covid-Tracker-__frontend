@@ -24,14 +24,14 @@ function Login() {
             password: login.password
         }
         axios.post('http://localhost:90/account/login', userdata)
-            .then((response) => {
-                console.log(response)
-                window.location.href = "/"
+            .then((response) => {                
                 var token = localStorage.setItem('token', response.data.token)
-                alert("Logged In!")
-                userdata({
-                    loginCheck: true        
-                })
+                if(token!=null){alert("Logged In!")}
+                else{
+                    console.log(response)
+                    alert('Incorrect Password or Username')
+                }
+                
             })
             .catch((err) => {
                 alert("Invalid Credential!")
@@ -68,7 +68,7 @@ function Login() {
 
                             </Col>
                             <Col xs={24} md={6} align='middle'  style={{paddingRight:'100px'}}>
-                                <button onClick={signupbtn} style={{ width:'80px', borderRadius:'5px'}}>Sign-UP</button>
+                                <button href='register' style={{ width:'80px', borderRadius:'5px'}}>Sign-UP</button>
                             </Col>
                         </Row>
                         </Container>
